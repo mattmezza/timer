@@ -13,7 +13,7 @@ Installation
 You can download the latest verions of `timer` (via this repository) and you can then source the `timer.sh` file in your bash profile. You can see an example of how I did it in my [dotfiles](https://github.com/mattmezza/dotfiles) (see plugins.sh and plugins.txt).
 
 ```bash
-git clone --branch 1.0.0 git@github.com/mattmezza/timer.git timer && source timer/timer
+git clone --branch 1.0.0 git@github.com/mattmezza/timer.git timer && source timer/pacco
 ```
 
 `timer` should be compatible with any *nix OS but it has been tested with macOS Big Sur (and the prev version).
