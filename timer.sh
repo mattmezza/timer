@@ -5,22 +5,24 @@ do
     opt="$1"
     case $opt in
         --help)
-            echo "Usage:"
-            echo "  $ $0 'Message' [OPTIONS]"
-            echo "Options:"
-            echo "  -M|--msg|--message"
-            echo "  -h|--hours:                 specifies the amount in hours"
-            echo "  -m|--minutes:               specifies the amount in minutes"
-            echo "  -s|--seconds:               specifies the amount in seconds"
-            echo "  -T|--title"
-            echo "  -t|--subtitle"
-            echo "  -o|--open:                  optional URL to open when clicking"
-            echo "  -i|--ignore-do-not-disturb: ignores DnD and awakes\!"
-            echo "  -a|--audio:                 whether or not to have the 'bling'"
-            echo "E.g.:"
-            echo "  $ $0 -h 0 -m 0 -s 5 'Text'  # timer elapsing in 5sec"
-            echo "  $ $0 -h 0 -m 30 'Text'  # timer elapsing in 30min"
-            echo "  $ $0 --audio -m 1 'Text'  # timer with audio feedback"
+            cat <<- EOF
+Usage:
+  $ $0 'Message' [OPTIONS]
+Options:
+  -M|--msg|--message
+  -h|--hours:                 specifies the amount in hours
+  -m|--minutes:               specifies the amount in minutes
+  -s|--seconds:               specifies the amount in seconds
+  -T|--title
+  -t|--subtitle
+  -o|--open:                  optional URL to open when clicking
+  -i|--ignore-do-not-disturb: ignores DnD and awakes!
+  -a|--audio:                 whether or not to have the 'bling'
+E.g.:
+  $ $0 -h 0 -m 0 -s 5 'Text'  # timer elapsing in 5sec
+  $ $0 -h 0 -m 30 'Text'      # timer elapsing in 30min
+  $ $0 --audio -m 1 'Text'    # timer with audio feedback
+EOF
             exit 0
             ;;
         -h|--hour|--hours)
