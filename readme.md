@@ -1,14 +1,13 @@
 timer
 ===
 
-`timer` is a utility to quickly note something down without leaving the terminal.
+`timer` is a utility to quickly start a timer without leaving the terminal. Thanks to `terminal-notifier` it also supports notification so that you are aware when time elapses.
 
 
 Installation
 ===
 
 You can download the latest verions of `timer` (via this repository) and you can then source the `timer.sh` file in your bash profile. You can see an example of how I did it in my [dotfiles](https://github.com/mattmezza/dotfiles) (see plugins.sh and plugins.txt).
-
 
 ```bash
 git clone --branch 1.0.0 git@github.com/mattmezza/timer.git timer && source timer/timer
@@ -25,9 +24,6 @@ Of course, you need to have `brew` installed.
 
 Usage
 ===
-
-`timer` uses a default directory as database. This directory defaults to `$HOME/notes` but can be changed by altering the environment variable `NOTE_DEFAULT_SCRATCH_DIR`.
-
 ```
 Usage:
   $ ./timer 'Message' [OPTIONS]
@@ -47,6 +43,8 @@ E.g.:
   $ ./timer --audio -m 1 'Text'  # timer with audio feedback
 
 ```
+`timer` can be used also from `stdin` with a pipe: `echo "Message" | timer -i`. In case you also specify a message, the CLI option will prevail.
+
 
 Development
 ===

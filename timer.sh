@@ -41,17 +41,17 @@ EOF
                  shift
                  ;;
              -T|--title)
-                 local TITLE="-title $2"
+                 ARGS+=("-title" "$2")
                  shift
                  shift
                  ;;
              -o|--open)
-                 local URL="-o $2"
+                 ARGS+=("-o" "$2")
                  shift
                  shift
                  ;;
              -t|--subtitle)
-                 local SUBTITLE="-subtitle $2"
+                 ARGS+=("-subtitle" "$2")
                  shift
                  shift
                  ;;
@@ -61,11 +61,11 @@ EOF
                  shift
              ;;
              -i|--ignore-do-not-disturb)
-                 local DND="-ignoreDnD"
+                 ARGS+=("-ignoreDnD")
                  shift
                  ;;
              -a|--audio)
-                 local AUDIO="-s default"
+                 ARGS+=("-s" "default")
                  shift
                  ;;
              *)
@@ -87,6 +87,6 @@ EOF
      fi
      echo "Timer started..." \
         && sleep $(echo "${HOUR:-0} * 3600 + ${MIN:-0} * 60 + ${SEC:-0}" | /usr/bin/bc) \
-        && echo "$MSG" | terminal-notifier $AUDIO $MSG $TITLE $SUBTITLE $DND ${ARGS[@]}
+        && echo "${MSG:-$(cat)}" | terminal-notifier $@
      return 0
 }
