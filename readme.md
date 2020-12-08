@@ -3,6 +3,9 @@ timer
 
 `timer` is a utility to quickly start a timer without leaving the terminal. Thanks to `terminal-notifier` it also supports notification so that you are aware when time elapses.
 
+![](timer.gif)
+
+
 
 Installation
 ===
