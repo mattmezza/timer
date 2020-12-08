@@ -1,2 +1,2 @@
 #!/bin/bash
-source timer
+alias timer="$PACCO_DIR/timer/timer.sh"
